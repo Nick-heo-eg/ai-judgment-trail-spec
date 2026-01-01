@@ -179,8 +179,8 @@ See [CONTRIBUTING.md](CONTRIBUTING.md)
 
 ## Contact
 
-- Issues: https://github.com/open-ajt/spec/issues
-- Discussions: https://github.com/open-ajt/spec/discussions
+- Issues: https://github.com/Nick-heo-eg/spec/issues
+- Discussions: https://github.com/Nick-heo-eg/spec/discussions
 
 ---
 
