@@ -8,6 +8,8 @@ AJT is a lightweight, vendor-neutral log format designed to answer one question 
 
 This is **not** a compliance framework. This is **not** an enforcement tool. This is a log schema that costs you one structured line per AI call.
 
+📄 **Why this exists:** [Why This Exists](./why-this-exists.md)
+
 ---
 
 ## Why AJT exists
