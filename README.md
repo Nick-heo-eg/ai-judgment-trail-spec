@@ -27,18 +27,6 @@ This is **not** a compliance framework. This is **not** an enforcement tool. Thi
 
 ---
 
-## Why AJT exists
-
-When an AI system makes a mistake, you need to reconstruct:
-- What model was used
-- What policy version was active
-- What risk level was assessed
-- Whether a human reviewed the decision
-
-Without structured logs, this reconstruction is guesswork. With AJT, it's one database query.
-
----
-
 ## Schema (9 required fields)
 
 ```json
