@@ -45,6 +45,39 @@ This is **not** a compliance framework. This is **not** an enforcement tool. Thi
 
 ---
 
+## 🚀 Quickstart: Run a Judgment Trail in 5 Minutes
+
+See AJT in action **right now** — no LLM required, no complex setup:
+
+```bash
+git clone https://github.com/Nick-heo-eg/spec
+cd spec
+python3 examples/run_ajt_demo.py
+```
+
+**What you'll see:**
+- ✅ 3 AI decisions made (2 STOP, 1 ALLOW)
+- ✅ Each decision has an explicit reason
+- ✅ Human vs AI responsibility is clear
+- ✅ All decisions logged to `ajt_trace.jsonl`
+
+**Example output:**
+```
+Decision: STOP
+Reason: missing_citation
+Risk Level: high
+Rule: R1_REQUIRE_EVIDENCE
+
+→ AI output blocked. No hallucination generated.
+```
+
+**The demo shows AJT's core principle:**
+Decisions are recorded **BEFORE** execution occurs.
+
+Try it now: `python3 examples/run_ajt_demo.py`
+
+---
+
 ## Schema (9 required fields)
 
 ```json

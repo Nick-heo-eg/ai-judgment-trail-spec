@@ -1,0 +1,92 @@
+name: AJT Demo Smoke Test
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  test-demo:
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v3
+
+    - name: Set up Python
+      uses: actions/setup-python@v4
+      with:
+        python-version: '3.9'
+
+    - name: Run AJT demo
+      run: |
+        python3 examples/run_ajt_demo.py
+
+    - name: Verify AJT log was created
+      run: |
+        if [ ! -f ajt_trace.jsonl ]; then
+          echo "ERROR: ajt_trace.jsonl not found"
+          exit 1
+        fi
+        echo "✅ AJT log file created"
+
+    - name: Verify log contains expected decisions
+      run: |
+        # Check for STOP decisions
+        if ! grep -q '"decision": "STOP"' ajt_trace.jsonl; then
+          echo "ERROR: No STOP decisions found"
+          exit 1
+        fi
+
+        # Check for ALLOW decision
+        if ! grep -q '"decision": "ALLOW"' ajt_trace.jsonl; then
+          echo "ERROR: No ALLOW decision found"
+          exit 1
+        fi
+
+        # Check for human_in_loop flag
+        if ! grep -q '"human_in_loop": true' ajt_trace.jsonl; then
+          echo "ERROR: No human_in_loop decision found"
+          exit 1
+        fi
+
+        echo "✅ All expected decisions present in log"
+
+    - name: Count events
+      run: |
+        EVENT_COUNT=$(wc -l < ajt_trace.jsonl)
+        if [ "$EVENT_COUNT" -ne 3 ]; then
+          echo "ERROR: Expected 3 events, found $EVENT_COUNT"
+          exit 1
+        fi
+        echo "✅ Correct number of events (3)"
+
+    - name: Validate JSON structure
+      run: |
+        python3 << 'EOF'
+        import json
+        import sys
+
+        required_fields = [
+            "timestamp", "run_id", "model", "decision",
+            "risk_level", "human_in_loop", "policy_version",
+            "app_version", "session_id"
+        ]
+
+        with open('ajt_trace.jsonl', 'r') as f:
+            for line_num, line in enumerate(f, 1):
+                event = json.loads(line)
+
+                # Check required fields
+                for field in required_fields:
+                    if field not in event:
+                        print(f"ERROR: Line {line_num} missing field: {field}")
+                        sys.exit(1)
+
+                # Check decision values
+                if event['decision'] not in ['STOP', 'ALLOW']:
+                    print(f"ERROR: Line {line_num} invalid decision: {event['decision']}")
+                    sys.exit(1)
+
+        print("✅ All events have valid AJT schema")
+        EOF
