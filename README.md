@@ -2,6 +2,8 @@
 
 **Minimal structured log schema for AI decision accountability**
 
+**Try it now:** `python3 examples/run_ajt_demo.py`
+
 ## When standard logs are enough — and when they aren't
 
 As of today, most production AI systems pass audits using standard logging stacks (CloudTrail, Datadog, immutable storage, etc.).
