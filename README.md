@@ -167,6 +167,46 @@ AJT just structures the record so you can explain it later.
 
 ---
 
+## AJT Ecosystem
+
+This repository is the **authoritative specification** of AJT (Auditability & Justification Traces).
+
+AJT is defined here as a minimal, structured trace format for making AI decisions auditable — including decisions that resulted in non-actions (STOP, abstention, blocked paths).
+
+Other repositories in this ecosystem are derived from this spec:
+
+- [**stop-first-rag**](https://github.com/Nick-heo-eg/stop-first-rag): an upstream decision system that produces explicit STOP events
+- **ajt-negative-proof-sim**: a simulation demonstrating audit-grade negative proof
+- **judgment-execution-evidence**: a read-only repository of raw decision evidence
+
+**This repository defines what AJT *is*.**
+Other repositories show how it is *used* or *stored*.
+
+### Specification boundaries, not behaviors
+
+AJT is defined in this repository.
+All other AJT-related repositories are non-authoritative derivatives.
+
+---
+
+## Non-Goals
+
+This repository intentionally does NOT define or contain:
+
+- Execution logic or runtime behavior
+- Decision-making strategies (e.g. when to STOP)
+- Operational policies or tuning guidelines
+- Incident analysis, interpretation, or attribution
+- Historical logs, evidence artifacts, or postmortems
+
+**This specification defines boundaries and trace semantics only.**
+
+Anything that evolves over time, executes in runtime, or requires interpretation belongs outside this repository.
+
+Other repositories demonstrate usage, execution, or evidence. This repository remains intentionally static.
+
+---
+
 ## Design principles
 
 1. **Minimal overhead**: 9 required fields, total cost ~1KB per log entry
