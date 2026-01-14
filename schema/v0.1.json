@@ -1,7 +1,7 @@
 {
   "$schema": "http://json-schema.org/draft-07/schema#",
   "title": "AI Judgment Trail (AJT) v0.1",
-  "description": "Minimal structured log schema for AI decision accountability",
+  "description": "Minimal structured log schema capturing decision outcomes and accountability signals at system boundaries, without recording internal reasoning, decision trees, or step-by-step evaluation.",
   "type": "object",
   "required": [
     "timestamp",
@@ -27,15 +27,15 @@
     },
     "model": {
       "type": "string",
-      "description": "AI model identifier (e.g., 'gpt-4', 'claude-3-opus')"
+      "description": "Identifier of the AI model involved in the execution (not the owner of judgment)."
     },
     "decision": {
       "type": "string",
-      "description": "Decision made by the system (e.g., 'allow', 'block', 'escalate')"
+      "description": "Decision outcome at the system boundary, including intentional STOP states (e.g., 'allow', 'block', 'escalate')."
     },
     "risk_level": {
       "type": "string",
-      "description": "Assessed risk level (e.g., 'low', 'medium', 'high')"
+      "description": "Declared risk level associated with the decision outcome; this field does not represent the internal risk evaluation process."
     },
     "human_in_loop": {
       "type": "boolean",
