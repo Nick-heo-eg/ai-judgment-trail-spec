@@ -1,5 +1,7 @@
 # AI Judgment Trail (AJT)
 
+Minimal schema for accountable AI decision traces.
+
 This repository documents experimental execution during research.
 It does not represent a production system, live authority, or active enforcement.
 
