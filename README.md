@@ -1,5 +1,16 @@
 # AI Judgment Trail (AJT)
 
+## Position
+
+This repository is part of the **Judgment Boundary** work:
+a set of experiments and specifications focused on
+*when AI systems must stop or not execute*.
+
+See the overarching map:
+→ https://github.com/Nick-heo-eg/stop-first-rag/blob/main/JUDGMENT_BOUNDARY_MANIFEST.md
+
+---
+
 > ⚠️ **Status: Internal Draft (Referenced for Conceptual Discussion)**
 >
 > This repository contains an *internal schema draft* used during the design of AI judgment accountability mechanisms.
