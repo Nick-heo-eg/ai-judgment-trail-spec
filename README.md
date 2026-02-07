@@ -23,6 +23,8 @@ See the overarching map:
 
 ---
 
+This repository defines structural constraints for separating judgment from execution, independent of model behavior.
+
 Minimal schema for accountable AI decision traces.
 
 This repository documents experimental execution during research.
