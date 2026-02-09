@@ -1,0 +1,49 @@
+name: Clarification Question
+description: Ask for clarification about concepts, scope, or boundaries defined in this repository
+title: "[Clarification] "
+labels: ["clarification"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        This repository defines concepts and boundaries, not implementations or products.
+
+        **This template is for clarification questions only.**
+
+        Bug reports, feature requests, and implementation requests are out of scope for this repository.
+
+  - type: textarea
+    id: what-trying-to-do
+    attributes:
+      label: What are you trying to do?
+      description: Describe the context or problem you're addressing
+      placeholder: "I'm trying to understand..."
+    validations:
+      required: true
+
+  - type: textarea
+    id: what-confusion
+    attributes:
+      label: What confusion or misunderstanding exists?
+      description: What is unclear or ambiguous about the concepts in this repository?
+      placeholder: "I'm confused about..."
+    validations:
+      required: true
+
+  - type: textarea
+    id: what-not-claim
+    attributes:
+      label: What do you understand this repository does NOT claim?
+      description: Confirm your understanding of the scope boundaries
+      placeholder: "I understand this repository does not..."
+    validations:
+      required: true
+
+  - type: markdown
+    attributes:
+      value: |
+        ---
+
+        **Note:** This repository documents boundaries and stopping conditions, not automation or decision-making authority.
+
+        If you are looking for implementation guidance, enforcement mechanisms, or runtime guarantees, those are out of scope for this repository.

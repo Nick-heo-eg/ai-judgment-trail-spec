@@ -1,5 +1,13 @@
 # AI Judgment Trail (AJT)
 
+## Important Notice
+
+This repository defines concepts specifications or proofs related to execution or judgment boundaries This repository is not an implementation not a product and not an enforcement mechanism It provides no runtime guarantees compliance claims or safety certification It does not prevent misuse accidents or harm by itself All examples code and diagrams are illustrative and exist only to clarify ideas Any operational enforcement must be implemented outside the model and outside this repository
+
+Questions discussions and critical review are welcome via GitHub Issues This repository intentionally separates conceptual clarity from execution responsibility
+
+---
+
 ## Position
 
 This repository is part of the **Judgment Boundary** work:
