@@ -126,6 +126,14 @@ Execution logic, enforcement mechanisms, policy design, and runtime behavior bel
 
 ---
 
+## Related Repositories
+
+* [execution-boundary](https://github.com/Nick-heo-eg/execution-boundary) — Architectural entry point and conceptual map
+* [execution-runtime-lab](https://github.com/Nick-heo-eg/execution-runtime-lab) — Runtime experimentation workspace
+* [telegram-judgment-demo-proof](https://github.com/Nick-heo-eg/telegram-judgment-demo-proof) — STOP/HOLD demonstration
+
+---
+
 ## Roadmap
 
 * v0.1 — Core schema
